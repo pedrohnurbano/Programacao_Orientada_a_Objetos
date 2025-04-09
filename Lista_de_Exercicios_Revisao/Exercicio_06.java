@@ -1,36 +1,19 @@
 import javax.swing.JOptionPane;
 
 public class Exercicio_06 {
-
-    public static int[] lerArray(String nomeArray) {
-        int[] array = new int[10];
-        for (int i = 0; i < 10; i++) {
-            String input = JOptionPane.showInputDialog(null,
-                    "Digite o elemento " + (i + 1) + " do array " + nomeArray + ":");
-            array[i] = Integer.parseInt(input);
-        }
-        return array;
-    }
-
-    public static int[] somarArrays(int[] A, int[] B) {
-        int[] C = new int[A.length];
-        for (int i = 0; i < A.length; i++) {
-            C[i] = A[i] + B[i];
-        }
-        return C;
-    }
-
     public static void main(String[] args) {
-        int[] A = lerArray("A");
-        int[] B = lerArray("B");
+        int[] A = new int[5];
+        int[] B = new int[5];
+        int[] R = new int[5];
 
-        int[] C = somarArrays(A, B);
-
-        StringBuilder resultado = new StringBuilder("Os elementos do array C são:\n");
-        for (int i = 0; i < C.length; i++) {
-            resultado.append(C[i]).append(" ");
+        for (int i = 0; i < 5; i++) {
+            A[i] = Integer.parseInt(JOptionPane.showInputDialog("Digite o valor A[" + i + "]"));
+            B[i] = Integer.parseInt(JOptionPane.showInputDialog("Digite o valor B[" + i + "]"));
+            R[i] = A[i] + B[i];
         }
 
-        JOptionPane.showMessageDialog(null, resultado.toString());
+        for (int i = 0; i < 5; i++) {
+            JOptionPane.showMessageDialog(null, "Soma R[" + i + "] = " + R[i]);
+        }
     }
 }
